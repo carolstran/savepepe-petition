@@ -1,0 +1,302 @@
+/* ENTIRE SITE */
+
+* {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+}
+
+body {
+    background-color: #448e59;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    color: #FFF;
+    font-size: 30px;
+    position: relative;
+    text-align: center;
+}
+
+h2 {
+    color: #FFF;
+    font-size: 28px;
+    position: relative;
+    text-align: center;
+}
+
+p {
+    color: #FFF;
+    font-size: 16px;
+    position: relative;
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+/* PUBLIC LAYOUT */
+
+#feelsbad {
+    margin: 0 auto;
+    padding-top: 20px;
+    display: block;
+}
+
+/* WELCOME PAGE */
+
+.welcome-buttons {
+    display: inline-block;
+}
+
+#login-welcome {
+    margin-left: 25px;
+}
+
+#welcome-buttons {
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* REGISTRATION PAGE */
+
+#signup-button {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#continue-button {
+    padding-top: 15px;
+}
+
+/* LOGIN PAGE */
+
+#login-form {
+    margin-top: 25px;
+}
+
+#login-login {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* NAV BAR */
+
+#pepe-icon {
+    margin-left: 10px;
+    margin-top: 2px;
+}
+
+header {
+    height: 35px;
+    width: 100%;
+    background-color: #FFF;
+    position: fixed;
+    z-index: 10000;
+}
+
+nav > a {
+    color: #000;
+    text-decoration: none;
+    margin: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    float: right;
+}
+
+.option {
+    display: inline-block;
+}
+
+/* IN-APP BODY */
+
+main {
+    padding-top: 55px;
+}
+
+/* FORMS */
+
+form {
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+}
+
+input {
+    margin-bottom: 20px;
+    padding: 5px 20px;
+    background-color: #448e59;
+    border: 1px solid #FFF;
+}
+
+input, select, textarea {
+    color: #FFF;
+    text-align: center;
+}
+
+textarea:focus, input:focus {
+    color: #FFF;
+    outline: none !important;
+}
+
+.input-button {
+    font-weight: 600;
+    color: #448e59;
+    background-color: #FFF;
+}
+
+label {
+    color: #FFF;
+    position: relative;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.input-labels {
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    font-size: 16px;
+}
+
+.error-message {
+    color: #F00;
+    position: relative;
+    text-align: center;
+    margin: 10px
+}
+
+/* PETITION PAGE/CANVAS */
+
+.intro {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+}
+
+#canvas {
+    border: 1px dashed #FFF;
+}
+
+canvas {
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* THANK YOU PAGE */
+
+#feelsgood-thanks {
+    position: relative;
+    margin: auto 0;
+    margin-top: 40px;
+    -webkit-animation: spin 10s linear infinite;
+    -moz-animation: spin 10s linear infinite;
+    animation: spin 10s linear infinite;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
+
+#feelsgood-thanks:hover {
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -o-animation-play-state: paused;
+    animation-play-state: paused;
+}
+
+#signature-image {
+    margin: 15px;
+}
+
+#thanks-buttons {
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 5px;
+}
+
+.thanks-buttons {
+    position: relative;
+    display: inline-block;
+}
+
+#delete-signature {
+    margin-left: 25px;
+}
+
+/* SIGNERS PAGES */
+
+#feelsgood {
+    position: relative;
+    margin: auto 0;
+    padding-top: 25px;
+}
+
+#signers-list {
+    width: 450px;
+    height: 300px;
+    overflow: scroll;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    border: 1px solid #FFF;
+}
+
+#signer-name {
+    margin: auto 0;
+}
+
+#signer-button {
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 25px;
+}
+
+#citysigners-button {
+    padding-top: 25px;
+}
+
+/* SHARE PAGE */
+.insta-pepes {
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+}
+
+.insta-pepes > a {
+    padding: 5px;
+}
+
+.social-share-buttons {
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+/* PROFILE PAGE */
+
+#user-info {
+    padding-top: 5px;
+}
+
+/* EDIT PROFILE PAGE */
+
+#edit-form {
+    padding-top: 25px;
+}
+
+#update-button {
+    padding-top: 10px;
+}

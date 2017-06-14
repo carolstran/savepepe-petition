@@ -1,0 +1,16 @@
+<h2>Please log in</h2>
+<form method="POST" id="login-form">
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+
+    {{#error}}
+        <div class="error-message">{{error}}</div>
+    {{/error}}
+
+    <label for="email" class="input-labels">Email Address:<br>
+        <input type="text" name="email" id="email">
+    </label><br>
+    <label for="password" class="input-labels">Password:<br>
+        <input type="password" name="password" id="password">
+    </label><br>
+    <input id="login-login" class="input-button" type="submit" value="LOG IN">
+</form>

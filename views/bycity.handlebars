@@ -1,0 +1,21 @@
+<h2>Signers from {{city}}</h2>
+<p>Get in touch, plan a Meetup, draw some Pepes, save the world.
+
+    <div id="signers-list"><br>
+        {{#each signers}}
+        <div class="signers">
+            <p id="signer-name">{{#if homepage}}<a href="{{homepage}}" target="_blank">{{/if}}{{first_name}} {{last_name}}</a> {{#if age}}[ {{age}} ]{{/if}}</p>
+        </div>
+        {{/each}}
+    </div>
+
+    {{#error}}
+        <div class="error-message">{{error}}</div>
+    {{/error}}
+
+    <br>
+    <div id="citysigners-button">
+        <form method="GET" action="/signers">
+            <input class="input-button" type="submit" value="SEE ALL {{count}} SIGNERS">
+        </form>
+    </div>

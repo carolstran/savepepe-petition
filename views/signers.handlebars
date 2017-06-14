@@ -1,0 +1,20 @@
+<h1>Here are all {{count}} signers so far</h1>
+    <div id="signers-list">
+        <br>
+        {{#each signers}}
+        <div class="signers">
+            <p id="signer-name">{{#if homepage}}<a href="{{homepage}}" target="_blank">{{/if}}{{first_name}} {{last_name}}</a> <br>{{#if age}}[ {{age}} ]{{/if}} {{#if city}} [ <a href="/signers/{{city}}" id="city-name">{{city}}</a> ]
+            {{/if}}<br><br>
+        </div>
+        {{/each}}
+    </div>
+
+    {{#error}}
+        <div class="error-message">{{error}}</div>
+    {{/error}}
+
+    <div id="signer-button">
+        <form class="thanks-buttons" method="GET" action="/petition/thanks">
+            <input class="input-button" type="submit" value="BACK TO SIGNATURE">
+        </form>
+    </div>

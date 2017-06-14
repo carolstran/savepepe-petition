@@ -1,0 +1,16 @@
+<h1>Pledge Your Support to Save Pepe the Frog</h1>
+<div class="intro">
+    <p>Hey there, {{name}}. A world full of wonderful Pepes is within reach - all you have to do is sign below! It's like signing a paper petition but without getting hassled on the street.
+</div>
+<form method="POST" id="petition-form">
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+
+    {{#error}}
+        <div class="error-message">{{error}}</div>
+    {{/error}}
+
+        <input type="hidden" name="signature" id="signature" required>
+        <canvas id="canvas" width="500" height="65"></canvas>
+    </label><br><br>
+    <input class="input-button" type="submit" value="SUBMIT">
+</form>

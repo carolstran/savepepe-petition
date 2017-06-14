@@ -1,0 +1,18 @@
+<h1>You're so great, {{name}}.</h1>
+<p>Thanks for joining the fight for a better Pepe.<br><br>
+<img id="feelsgood-thanks" src="../assets/feelsgood-cropped.jpg" height="250" width="250">
+    <br>
+    <br>
+    <img id="signature-image" src="{{signatureUrl}}">
+    <div id="thanks-buttons">
+        <form id="get-signers" class="thanks-buttons" method="GET" action="/signers">
+            <input class="input-button" type="submit" value="SEE ALL {{count}} SIGNERS">
+        </form>
+        <form id="delete-signature" class="thanks-buttons" method="POST" action="/petition/delete">
+            <input type="hidden" name="_csrf" value="{{csrfToken}}">
+            <input class="input-button" type="submit" value="DELETE SIGNATURE">
+        </form><br>
+        <form id="share-pepes" class="thanks-buttons" method="GET" action="/share">
+            <input class="input-button" type="submit" value="SHARE THE LOVE">
+        </form>
+    </div>

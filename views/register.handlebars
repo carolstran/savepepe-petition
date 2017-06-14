@@ -1,0 +1,23 @@
+<h2>Create Your Account</h2>
+<form method="POST" id="registration-form">
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+
+    {{#error}}
+        <div class="error-message">{{error}}</div>
+    {{/error}}
+
+    <label for="first-name" class="input-labels">First Name:<br>
+        <input type="text" name="first" style="text-transform:uppercase" id="first-name" required>
+    </label><br>
+    <label for="last-name" class="input-labels">Last Name:<br>
+        <input type="text" name="last" style="text-transform:uppercase" id="last-name" required>
+    </label><br>
+    <label for="email" class="input-labels">Email Address:<br>
+        <input type="text" name="email" id="email" required>
+    </label><br>
+    <label for="password" class="input-labels">Password:<br>
+        <input type="password" name="password" id="password" required>
+    </label><br>
+    <input id="signup-button" class="input-button" type="submit" value="SIGN UP">
+</form>
+<p>Already have an account? <a href="/login">Log in</a>.
