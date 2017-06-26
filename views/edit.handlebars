@@ -9,36 +9,39 @@
 <form id="edit-form" method="POST">
     <input type="hidden" name="_csrf" value="{{csrfToken}}">
 
-    <label for="first-name" class="input-labels">First Name:<br>
-        <input type="text" name="first" style="text-transform:uppercase" id="first-updated" value="{{user.first_name}}" required>
+    <label for="first-name" class="input-labels">First Name<br>
+        <input type="text" name="first" style="text-transform:uppercase" id="first-updated" value="{{user.first_name}}">
     </label><br>
 
-    <label for="last-name" class="input-labels">Last Name:<br>
-        <input type="text" name="last" style="text-transform:uppercase" id="last-updated" value="{{user.last_name}}" required>
+    <label for="last-name" class="input-labels">Last Name<br>
+        <input type="text" name="last" style="text-transform:uppercase" id="last-updated" value="{{user.last_name}}">
     </label><br>
 
-    <label for="email" class="input-labels">Email:<br>
+    <label for="email" class="input-labels">Email<strong>*</strong><br>
         <input type="text" name="email" id="email-updated" value="{{user.email}}" required>
     </label><br>
 
-    <label for="password" class="input-labels">Password:<br>
+    <label for="password" class="input-labels">Password<br>
         <input type="password" name="password" id="password-updated">
     </label><br>
 
-    <label for="age" class="input-labels">Age:<br>
+    <label for="age" class="input-labels">Age<br>
         <input type="text" name="age" id="age-updated" value="{{user.age}}">
     </label><br>
 
-    <label for="city" class="input-labels">City:<br>
+    <label for="city" class="input-labels">City<br>
         <input type="text" name="city" style="text-transform:uppercase" id="city-updated" value="{{user.city}}">
     </label><br>
 
-    <label for="homepage" class="input-labels">Homepage:<br>
+    <label for="homepage" class="input-labels">Homepage<br>
         <input type="text" name="homepage" id="homepage-updated" value="{{user.homepage}}">
     </label><br>
 
     <div id="update-button">
-        <input class="input-button" type="submit" value="UPDATE">
+        <input class="input-button" type="submit" value="UPDATE"><br>
     </div>
+    <form method="GET" action="/profile">
+        <input class="input-button" type="submit" value="BACK TO PROFILE">
+    </form>
 
 </form>
