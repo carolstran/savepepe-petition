@@ -97,7 +97,7 @@ router.route('/register')
                 res.redirect('/register/setup');
             });
         }).catch(function(err) {
-            console.log('Error hashing password', err);
+            console.log('Unable to hash password', err);
             res.render('register', {
                 layout: 'public',
                 csrfToken: req.csrfToken(),
@@ -138,7 +138,7 @@ router.route('/register/setup')
             client.del('rows');
             res.redirect('/petition');
         }).catch(function(err) {
-            console.log('Error inserting profile', err);
+            console.log('Unable to insert profile', err);
             res.render('setup', {
                 layout: 'public',
                 csrfToken: req.csrfToken(),
@@ -187,7 +187,7 @@ router.route('/login')
                 });
             }
         }).catch(function(err) {
-            console.log('Error checking account', err);
+            console.log('Unable to check account', err);
             res.render('login', {
                 layout: 'public',
                 csrfToken: req.csrfToken(),
@@ -231,7 +231,7 @@ router.route('/petition')
             res.cookie('signed', 'true');
             res.redirect('/petition/thanks');
         }).catch(function(err) {
-            console.log('Error signing petition', err);
+            console.log('Unable to sign petition', err);
             res.render('petition', {
                 layout: 'main',
                 csrfToken: req.csrfToken(),
@@ -259,13 +259,13 @@ router.route('/petition/thanks')
                             });
                         });
                     }).catch(function(err) {
-                        console.log('Error showing signature', err);
+                        console.log('Unable to show signature', err);
                     });
                 } else {
                     res.redirect('/petition');
                 }
             }).catch(function(err) {
-                console.log('Error checking for signature', err);
+                console.log('Unable to check for signature', err);
             });
         }
     });
@@ -277,7 +277,7 @@ router.route('/petition/delete')
             client.del('rows');
             res.redirect('/petition');
         }).catch(function(err) {
-            console.log('Error deleting signature', err);
+            console.log('Unable to delete signature', err);
         });
     });
 
@@ -293,7 +293,7 @@ router.route('/signers')
                 if (hasSigned == true) {
                     client.get('rows', function(err, signerRows) {
                         if (err) {
-                            console.log(err);
+                            console.log('Unable to get signer rows', err);
                             return;
                         } else if (signerRows != null) {
                             let signers = JSON.parse(signerRows);
@@ -324,9 +324,11 @@ router.route('/signers')
                                         signers: results.rows,
                                         count: count
                                     });
+                                }).catch(function(err) {
+                                    console.log('Unable to count signers', err);
                                 });
                             }).catch(function(err) {
-                                console.log('Error getting signers', err);
+                                console.log('Unable to get signers', err);
                             });
                         }
                     });
@@ -351,7 +353,11 @@ router.route('/signers/:city')
                     signers: results.rows,
                     count: count
                 });
+            }).catch(function(err) {
+                console.log('Unable to count signers', err);
             });
+        }).catch(function(err) {
+            console.log('Unable to get signers by city', err);
         });
     });
 
@@ -382,6 +388,8 @@ router.route('/profile')
                     user: result,
                     csrfToken: req.csrfToken()
                 });
+            }).catch(function(err) {
+                console.log('Unable to get profile', err);
             });
         }
     });
@@ -398,6 +406,8 @@ router.route('/profile/edit')
                     user: result,
                     csrfToken: req.csrfToken()
                 });
+            }).catch(function(err) {
+                console.log('Unable to get edit profile');
             });
         }
     })
@@ -424,7 +434,7 @@ router.route('/profile/edit')
                 client.del('rows');
                 res.redirect('/profile');
             }).catch(function(err) {
-                console.log('Error getting profile', err);
+                console.log('Unable to get updated profile', err);
                 res.render('edit', {
                     layout: 'main',
                     error: 'Something went wrong! Please try again.',
@@ -437,9 +447,9 @@ router.route('/profile/edit')
 // NAV ROUTES
 router.route('/logout')
 
-    .post(function(req, res, next) {
+    .get(function(req, res, next) {
         req.session.destroy();
-        res.end('/welcome');
+        res.redirect('/welcome');
         next();
     });
 
