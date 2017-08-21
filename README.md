@@ -5,4 +5,4 @@ Users must register or login to add their signature in a 2-D canvas. Upon signin
 
 Technologies: Handlebars.js, Node.js, Express.js and PostgreSQL.
 
-Hosted on Heroku. See it live [here](https://savepepe.herokuapp.com/welcome).
+Hosted on [Heroku](https://savepepe.herokuapp.com/welcome).
